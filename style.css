@@ -1,0 +1,65 @@
+
+    /*отступы и границы для элементов */
+    body, h1, p, a, ul, li, img {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    /*  шрифты и размер текста */
+    body {
+        font-family: Arial, sans-serif; /* использование шрифта  */
+        font-size: 16px; /* размер текста */
+        line-height: 1.5; /* высота строки */
+    }
+
+    h1 {
+        font-size: 24px; /* увеличиваем размер заголовка */
+        font-weight: bold; /* добавляем жирный шрифт */
+        text-align: center; /* выравнивание по центру */
+        margin-bottom: 20px; /* отступ снизу */
+    }
+
+    p {
+        background-color: #F5F5F5; /* устанавливаем фоновый цвет */
+        color: #333333; /* цвет текста */
+        padding: 10px; /* добавляем отступы внутри */
+        margin-bottom: 10px; /* отступ снизу */
+        font-size: 14px; /* уменьшаем размер текста в абзацах*/
+        text-indent: 20px; /* +отступ первой строки */
+        word-spacing: 5px; /*  пробелы между словами */
+        letter-spacing: 1px; /* пробелы между буквами */
+        font-style: italic; /* добавляем курсив*/
+        text-transform: uppercase; /* верхний регистр */
+    }
+
+    a {
+        color: #007BFF; /* устанавливаем цвет ссылок */
+        text-decoration: none; /* убираем подчеркивание у ссылки */
+        margin-bottom: 10px; /*  отступ снизу */
+    }
+
+    img {
+        width: 50%; /* устанавливаем ширину картинки от родительского элемента */
+        display: block; /* картинка == блочный элемент */
+        margin-bottom: 10px; /* отступ снизу */
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.3); /* устанавливаем тень */
+        filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+    }
+
+    ul {
+        list-style-type: none; /* убираем маркеры у списка */
+        margin-bottom: 10px; /* отступ снизу */
+    }
+
+    li {
+        margin-left: 20px; /* отступ слева */
+    }
+
+    footer {
+        padding: 10px
+    }
+    {
+    }
