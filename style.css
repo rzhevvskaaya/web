@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
 
+    :root{
+        --background-color:#F5F5F5;
+        --color:#333333;
+        --filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+        --box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.3);
+    }
     /*отступы и границы для элементов */
     body, h1, p, a, ul, li, img {
         margin: 0;
@@ -8,24 +15,24 @@
 
     /*  шрифты и размер текста */
     body {
-        font-family: Arial, sans-serif; /* использование шрифта  */
-        font-size: 16px; /* размер текста */
+        font-family: 'Bitter', serif; /* использование шрифта  */
+        font-size: 1rem; /* размер текста - rem */
         line-height: 1.5; /* высота строки */
     }
 
     h1 {
-        font-size: 24px; /* увеличиваем размер заголовка */
+        font-size: 1.5rem; /* увеличиваем размер заголовка */
         font-weight: bold; /* добавляем жирный шрифт */
         text-align: center; /* выравнивание по центру */
         margin-bottom: 20px; /* отступ снизу */
     }
 
     p {
-        background-color: #F5F5F5; /* устанавливаем фоновый цвет */
-        color: #333333; /* цвет текста */
+        background-color: var(--background-color) ; /* устанавливаем фоновый цвет */
+        color: var(--color); /* цвет текста */
         padding: 10px; /* добавляем отступы внутри */
         margin-bottom: 10px; /* отступ снизу */
-        font-size: 14px; /* уменьшаем размер текста в абзацах*/
+        font-size: 0.8rem; /* уменьшаем размер текста в абзацах*/
         text-indent: 20px; /* +отступ первой строки */
         word-spacing: 5px; /*  пробелы между словами */
         letter-spacing: 1px; /* пробелы между буквами */
@@ -45,8 +52,8 @@
         margin-bottom: 10px; /* отступ снизу */
         margin-left: auto;
         margin-right: auto;
-        box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.3); /* устанавливаем тень */
-        filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+        box-shadow: var(--box-shadow); /* устанавливаем тень */
+        filter: var(--filter);
     }
 
     ul {
@@ -60,6 +67,4 @@
 
     footer {
         padding: 10px
-    }
-    {
     }
