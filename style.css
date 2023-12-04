@@ -144,11 +144,4 @@ tr:nth-child(odd) {
     }
 }
 
-.kartinki{
-    display: grid;
-    width: 50%;
-    height: 50%;
-    column-gap: 50px;
-    flex-direction: row;
-    grid-template-columns: repeat(2, 1fr);
-}
+
