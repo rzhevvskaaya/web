@@ -6,6 +6,15 @@
         --filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
         --box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.3);
     }
+    header{
+        background-color: #49498c;
+        width: 100%;
+        height: 20%;
+        display: table;
+        top: 0;
+        position: sticky;
+        z-index: 1;
+    }
     /*отступы и границы для элементов */
     body, h1, p, a, ul, li, img {
         margin: 0;
@@ -69,22 +78,25 @@
         padding: 10px
     }
 
-.article-container {
+article {
     border: 1px solid #ccc;
     padding: 40px;
     margin: 40px 0 40px 20px;
 }
-.aside-container {
-    display: flex;
-    flex-direction:column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+aside{
+    width: 100%;
 }
 .nav-container ul {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     list-style: none;
-    margin: 0 auto;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 td {
@@ -92,16 +104,21 @@ td {
     border: 1px solid grey;
 
 }
+main{
+    padding-top: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap; /*позволяет элементам переноситься на новую строку при нехватке места по горизонтали.*/
 
-table {
-
-    border-collapse: collapse;
-    width: 100%;
+}
+caption{
+    display: flex;
+    justify-content: flex-start;
 }
 table {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
 }
 
 tr:nth-child(even) {
@@ -112,4 +129,17 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+    .img {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 10px), (orientation: landscape){
+    .img {
+        display: flex;
+    }
+}
+
 
