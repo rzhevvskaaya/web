@@ -112,22 +112,38 @@ main{
     flex-wrap: wrap; /*позволяет элементам переноситься на новую строку при нехватке места по горизонтали.*/
 
 }
+
+.table_container {
+
+    /*grid-gap: 10px;*/
+
+}
 caption{
     display: flex;
     justify-content: flex-start;
 }
-table {
-    width: 100%;
+.table_container tbody{
     display: grid;
+    grid-template-columns:repeat( 4, 1fr);
+    justify-content: center;
+    border: 2px solid black;
+
+}
+.table_container tbody tr th{
+    border: 1px solid #808080;
+
+}
+.table_container tbody tr {
+    display: contents;
+    justify-content: center;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-    height: 100%;
+.table_container tbody tr th:nth-child(even) {
+    background-color: wheat;
 }
 
-tr:nth-child(odd) {
-    background-color: #fff;
+.table_container tbody tr th:nth-child(odd) {
+    background-color: #808080;
 }
 
 @media screen and (max-width: 768px) {
@@ -144,4 +160,19 @@ tr:nth-child(odd) {
     }
 }
 
+/* Обычное состояние пунктов меню */
+.nav-container ul li a {
+    color: #000;
+}
 
+/* Стиль при наведении на пункт меню */
+.nav-container ul li a:hover {
+    color: #f00;
+    font-weight: bold;
+}
+
+/* Стиль активного пункта меню */
+.nav-container ul li.active a {
+    color: #f00;
+    font-weight: bold;
+}
