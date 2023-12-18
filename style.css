@@ -159,6 +159,9 @@ caption{
         display: flex;
     }
 }
+.nav-container h2 a{
+    color: black;
+}
 
 /* Обычное состояние пунктов меню */
 .nav-container ul li a {
@@ -172,7 +175,7 @@ caption{
 }
 
 /* Стиль активного пункта меню */
-.nav-container ul li.active a {
-    color: #f00;
+.nav-container ul li a.active{
+    color: #ff00fb;
     font-weight: bold;
 }

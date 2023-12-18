@@ -1,11 +1,8 @@
 (function() {
-    // Функция для измерения времени загрузки страницы
-    var startTime = performance.now();
 
     // Событие загрузки страницы
     window.addEventListener('load', function () {
-        var endTime = performance.now();
-        var loadTime = endTime - startTime;
+        var loadTime = performance.now();
 
         // Получаем элемент footer по его id
         var footer = document.getElementById('pageFooter');

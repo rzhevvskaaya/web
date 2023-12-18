@@ -4,9 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Концерты</title>
-    <script src="index.js" defer></script>
+    <script src="index.js" async></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="active.js"></script>
+    <script src="table.js"></script>
 </head>
 <body>
+<header>
+    <nav class="nav-container">
+        <h2><a href="index.html">Меню</a></h2>
+        <ul>
+            <li><a href="biography.html">Биография</a></li>
+            <li><a href="concerts.html">Концерты</a></li>
+            <li><a href="test.html">Тест</a></li>
+            <li><a href="merch.html">Мерч</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Расписание концертов</h1>
+
+    <form id="constrForm">
+        <label for="city">Город:</label>
+        <select id="city" name="city" required>
+            <option value="city1">Москва</option>
+            <option value="city2">Санкт-Петербург</option>
+        </select>
+
+        <button type="submit">Сгенерировать расписание</button>
+    </form>
+
+    <div id="results"></div>
+</main>
+
+<script src="script.js"></script>
+</body>
 <footer id="pageFooter"> </footer>
 </body>
 </html>
