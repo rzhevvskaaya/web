@@ -35,26 +35,9 @@ function createTable() {
         });
     }
 
-    // Сохранение массива в localStorage
-    localStorage.setItem('table', JSON.stringify(savedTable));
-
     // Добавление таблицы к body
     document.body.appendChild(table);
 
-    // Добавление задачи в массив
-    savedTable.push(table);
-
-    // Сохранение массива задач в localStorage
-    localStorage.setItem('table', JSON.stringify(savedTable));
-
-    // Отображение задачи
-    displayTask(watching);
 }
-// Функция для отображения задачи
-function displayTask(table) {
-    const notable = Array.from(notable).find(item => item.textContent === '');
-    if (notable) {
-        notable.textContent = table;
-    }
-}
+
 
