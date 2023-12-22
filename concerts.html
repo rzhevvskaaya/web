@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Концерты</title>
-    <script src="index.js" async></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="concerts.css">
     <script src="active.js"></script>
     <script src="table.js"></script>
 </head>
@@ -22,22 +21,32 @@
     </nav>
 </header>
 <main>
-    <h1>Расписание концертов</h1>
+    <div>
+        <h1>Расписание концертов</h1>
+    </div>
 
+     <div>
     <form id="constrForm">
-        <label for="city">Город:</label>
-        <select id="city" name="city" required>
-            <option value="city1">Москва</option>
-            <option value="city2">Санкт-Петербург</option>
+        <label for="reason">Причина посещения концерта:</label>
+        <select id="reason" name="reason" required>
+            <option value="reason1">Я люблю Егора Крида</option>
+            <option value="reason2">Валя Карнавал была не той самой</option>
+            <option value="reason3">Тимати не такой классный</option>
+            <option value="reason4">Клава Кока не такая хорошая</option>
+            <option value="reason5">У него есть Ламбо Урус</option>
+            <option value="reason6">У Егора Крида классные песни</option>
+            <option value="reason7">У Крида есть фит с Киркоровым</option>
+            <option value="reason8">Я русский</option>
+            <option value="reason9">Я люблю Пензу</option>
+            <option value="reason10">Я состою в фан-клубе Егора Крида</option>
         </select>
-
-        <button type="submit">Сгенерировать расписание</button>
     </form>
+     </div>
+    <button onclick="createTable()">Посмотреть расписание</button>
 
     <div id="results"></div>
 </main>
 
-<script src="script.js"></script>
 </body>
 <footer id="pageFooter"> </footer>
 </body>
