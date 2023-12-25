@@ -1,43 +1,62 @@
-function createTable() {
-    // Массив с городами России
-    const cities = ["Москва", "Санкт-Петербург", "Екатеринбург", "Новосибирск", "Краснодар", "Владивосток", "Казань", "Сочи", "Ростов-на-Дону", "Нижний Новгород"];
-    const dates = ["29.05.2023", "20.06.2023", "28.03.2023", "04.01.2023", "05.09.2023", "18.02.2023", "28.04.2023", "20.01.2023", "10.10.2023", "09.06.2023"];
+document.addEventListener('DOMContentLoaded', function () {
+    const concertForm = document.getElementById('concertForm');
+    const scheduleTable = document.getElementById('scheduleTable');
+    const scheduleBody = document.getElementById('scheduleBody');
 
-    // Создание таблицы
-    const table = document.createElement("table");
+    // Загрузка концертов из localStorage
+    let savedConcerts = JSON.parse(localStorage.getItem('concerts')) || [];
 
-    // Добавление заголовка
-    const headerRow = table.insertRow(0);
-    const headers = ["Город", "Дата концерта"];
-    headers.forEach((headerText, index) => {
-        const th = document.createElement("th");
-        const text = document.createTextNode(headerText);
-        th.appendChild(text);
-        headerRow.appendChild(th);
+    // Отображение ранее сохраненных концертов
+    displayConcerts(savedConcerts);
+
+    concertForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Получение значений города и даты концерта из формы
+        const cityInput = document.getElementById('city');
+        const dateInput = document.getElementById('date');
+
+        const city = cityInput.value.trim();
+        const date = dateInput.value.trim();
+
+        if (city && date) {
+            // Добавление концерта в массив
+            const concert = { city, date };
+            savedConcerts.push(concert);
+
+            // Сохранение массива концертов в localStorage
+            localStorage.setItem('concerts', JSON.stringify(savedConcerts));
+
+            // Отображение концерта
+            displayConcert(concert);
+
+            // Очистка полей ввода
+            cityInput.value = "";
+            dateInput.value = "";
+        } else {
+            alert('Пожалуйста, введите город и дату концерта.');
+        }
     });
 
-    // Загрузка задач из localStorage
-    let savedTable = JSON.parse(localStorage.getItem('table')) || [];
+    // Функция для отображения концерта
+    function displayConcert(concert) {
+        const newRow = document.createElement("tr");
 
+        const cityCell = document.createElement("td");
+        cityCell.textContent = concert.city;
+        newRow.appendChild(cityCell);
 
-    // Добавление данных о концертах
-    for (let i = 0; i < cities.length; i++) {
-        const concertRow = table.insertRow(i + 1);
-        const city = cities[i];
-        const date = dates[i];
-        const data = [city, date];
+        const dateCell = document.createElement("td");
+        dateCell.textContent = concert.date;
+        newRow.appendChild(dateCell);
 
-        data.forEach((cellData, index) => {
-            const td = document.createElement("td");
-            const text = document.createTextNode(cellData);
-            td.appendChild(text);
-            concertRow.appendChild(td);
-        });
+        scheduleBody.appendChild(newRow);
     }
 
-    // Добавление таблицы к body
-    document.body.appendChild(table);
-
-}
-
-
+    // Функция для отображения ранее сохраненных концертов
+    function displayConcerts(concerts) {
+        for (const concert of concerts) {
+            displayConcert(concert);
+        }
+    }
+});
