@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Тест</title>
     <script src="index.js" async></script>
-    <link rel="stylesheet" href="style.css">
     <script src="active.js"></script>
-    <script src="capcha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.js"></script>
+    <link rel="stylesheet" type="text/css" href="test.css">
+
 </head>
 <body>
 <header>
@@ -20,13 +21,21 @@
         </ul>
     </nav>
 </header>
+
 <main>
-<h1>Проверка изображения</h1>
-<img id="captcha-image" src="" alt="Captcha Image">
-<input id="user-answer" type="text" placeholder="Введите ответ">
-<button onclick="checkAnswer()">Проверить</button>
-<p id="result"></p>
+<button id="openModalBtn">Открыть окно регистрации</button>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="closeModalBtn">&times;</span>
+        <h2>Регистрация</h2>
+        <input type="text" id="nameInput" placeholder="Имя">
+        <input type="password" id="passwordInput" placeholder="Пароль">
+        <button id="registerBtn">Зарегистрироваться</button>
+    </div>
+</div>
 </main>
-<footer id="pageFooter"> </footer>
+<footer id="pageFooter">
+    <script src="modal.js"></script>
+</footer>
 </body>
 </html>
